@@ -7,7 +7,7 @@
 
     <groupId>io.github.software-hhao</groupId>
     <artifactId>hhao-common-parent</artifactId>
-    <version>0.0.8</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>HHao parent pom</name>
@@ -59,8 +59,8 @@
         <!--alibaba-->
         <spring-cloud-alibaba-dependencies.version>2021.1</spring-cloud-alibaba-dependencies.version>
         <seata.version>1.4.2</seata.version>
-        <dubbo.version>3.0.5</dubbo.version>
-        <nacos.version>2.0.3</nacos.version>
+        <dubbo.version>3.0.6</dubbo.version>
+        <nacos.version>2.0.4</nacos.version>
 
         <!--aspectj-->
         <org.aspectj.version>1.9.8.RC3</org.aspectj.version>
@@ -103,7 +103,9 @@
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <hutool-all.version>5.7.12</hutool-all.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
+        <commons-io.version>2.11.0</commons-io.version>
         <nio-multipart-parser.version>1.1.0</nio-multipart-parser.version>
+        <guava.version>31.0.1-jre</guava.version>
 
         <feign-okhttp.version>11.7</feign-okhttp.version>
 
@@ -111,9 +113,6 @@
         <junit-platform-launcher.version>1.8.2</junit-platform-launcher.version>
         <assertj-core.version>3.21.0</assertj-core.version>
         <wiremock-jre8.version>2.32.0</wiremock-jre8.version>
-
-        <!--hhao-->
-        <hhao-common.version>1.0.0</hhao-common.version>
 
         <!--test-->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -125,6 +124,7 @@
         <mybatis-generator-maven-plugin.version>1.4.0</mybatis-generator-maven-plugin.version>
         <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
         <aspectj-maven-plugin.version>1.4</aspectj-maven-plugin.version>
+        <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -428,11 +428,24 @@
                 <version>${commons-fileupload.version}</version>
             </dependency>
 
+            <!--https://commons.apache.org/proper/commons-io/index.html-->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
             <!--https://github.com/synchronoss/nio-multipart-->
             <dependency>
                 <groupId>org.synchronoss.cloud</groupId>
                 <artifactId>nio-multipart-parser</artifactId>
                 <version>${nio-multipart-parser.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
             <!--ok http-->
@@ -691,6 +704,18 @@
                         <target>11</target>
                     </configuration>
                 </plugin>
+                <!--https://maven.apache.org/maven-release/maven-release-plugin/usage.html-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <releaseProfiles>release</releaseProfiles>
+                        <goals>deploy</goals>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -715,6 +740,19 @@
                 <configuration>
                     <generateBackupPoms>false</generateBackupPoms>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -875,21 +913,12 @@
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>${maven-javadoc-plugin.version}</version>
+                        <configuration>
+                            <charset>UTF-8</charset>
+                            <failOnError>false</failOnError>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -912,10 +941,21 @@
                                 </goals>
                                 <configuration>
                                     <keyname>${gpg.keyname}</keyname>
-                                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                                    <passphrase>${gpg.keyname}</passphrase>
                                 </configuration>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>${maven-release-plugin.version}</version>
+                        <configuration>
+                            <autoVersionSubmodules>true</autoVersionSubmodules>
+                            <useReleaseProfile>false</useReleaseProfile>
+                            <releaseProfiles>release</releaseProfiles>
+                            <goals>deploy</goals>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
