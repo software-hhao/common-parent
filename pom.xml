@@ -39,7 +39,7 @@
         <gpg.executable>gpg</gpg.executable>
         <gpg.passphrase>the_pass_phrase</gpg.passphrase>
         <gpg.keyname>0x001BC12B</gpg.keyname>
-        <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
 
         <!-- Compiler settings properties -->
@@ -908,6 +908,13 @@
                             <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.thoughtworks.xstream</groupId>
+                                <artifactId>xstream</artifactId>
+                                <version>1.4.15</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -951,7 +958,7 @@
                         <configuration>
                             <autoVersionSubmodules>true</autoVersionSubmodules>
                             <useReleaseProfile>false</useReleaseProfile>
-                            <releaseProfiles>release</releaseProfiles>
+                            <releaseProfiles>release-ossrh</releaseProfiles>
                             <goals>deploy</goals>
                         </configuration>
                     </plugin>
