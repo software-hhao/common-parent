@@ -122,7 +122,7 @@
         <mybatis-generator-maven-plugin.version>1.4.0</mybatis-generator-maven-plugin.version>
         <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
         <aspectj-maven-plugin.version>1.4</aspectj-maven-plugin.version>
-        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -959,6 +959,7 @@
                             <autoVersionSubmodules>true</autoVersionSubmodules>
                             <useReleaseProfile>false</useReleaseProfile>
                             <releaseProfiles>release-ossrh</releaseProfiles>
+                            <arguments>-DskipTests</arguments>
                             <goals>deploy</goals>
                         </configuration>
                     </plugin>
