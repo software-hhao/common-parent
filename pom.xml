@@ -4,7 +4,7 @@
     <inceptionYear>2021</inceptionYear>
     <groupId>io.github.software-hhao</groupId>
     <artifactId>hhao-common-parent</artifactId>
-    <version>3.0.2-SNAPSHOT</version>
+    <version>3.0.2</version>
     <packaging>pom</packaging>
 
     <name>hhao parent pom</name>
@@ -21,7 +21,7 @@
         <url>https://github.com/software-hhao/hhao-common-parent</url>
         <connection>scm:git:ssh://git@github.com/software-hhao/hhao-common-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/software-hhao/hhao-common-parent.git</developerConnection>
-        <tag>hhao-common-parent-3.0.0</tag>
+        <tag>hhao-common-parent-3.0.2</tag>
     </scm>
     <developers>
         <developer>
