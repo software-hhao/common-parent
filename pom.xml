@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <inceptionYear>2021</inceptionYear>
-
     <groupId>io.github.software-hhao</groupId>
     <artifactId>hhao-common-parent</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.1.2</version>
     <packaging>pom</packaging>
 
-    <name>HHao parent pom</name>
+    <name>hhao parent pom</name>
     <description>Top pom.xml file</description>
     <url>https://github.com/software-hhao/hhao-common-parent</url>
-
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -19,112 +18,137 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
     <scm>
         <url>https://github.com/software-hhao/hhao-common-parent</url>
         <connection>scm:git:ssh://git@github.com/software-hhao/hhao-common-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/software-hhao/hhao-common-parent.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-
     <developers>
         <developer>
             <name>WangSheng</name>
             <email>hhao.software@hotmail.com</email>
         </developer>
     </developers>
-
     <properties>
         <!--ossrh-->
         <gpg.executable>gpg</gpg.executable>
         <gpg.passphrase>the_pass_phrase</gpg.passphrase>
-        <gpg.keyname>0x001BC12B</gpg.keyname>
-        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-        <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+        <gpg.keyname>0xCD5D16EF</gpg.keyname>
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+        <maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
+        <xstream>1.4.20</xstream>
 
         <!-- Compiler settings properties -->
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!--spring all-->
-        <spring-boot-starter-parent.version>2.6.3</spring-boot-starter-parent.version>
-        <spring-cloud-dependencies.version>2021.0.0</spring-cloud-dependencies.version>
-        <spring-session-bom.version>2021.1.1</spring-session-bom.version>
-        <spring.version>5.3.15</spring.version>
+        <spring-boot-starter-parent.version>3.2.5</spring-boot-starter-parent.version>
+        <spring-cloud-dependencies.version>2023.0.1</spring-cloud-dependencies.version>
+        <spring-session-bom.version>3.2.2</spring-session-bom.version>
+        <spring-security-oauth2-authorization-server.version>1.2.4</spring-security-oauth2-authorization-server.version>
+        <spring.version>6.1.6</spring.version>
 
         <!--alibaba-->
-        <spring-cloud-alibaba-dependencies.version>2021.1</spring-cloud-alibaba-dependencies.version>
-        <seata.version>1.4.2</seata.version>
-        <dubbo.version>3.0.6</dubbo.version>
-        <nacos.version>2.0.4</nacos.version>
+        <!--https://sca.aliyun.com/en-us/-->
+        <!--https://start.dubbo.apache.org/-->
+        <spring-cloud-alibaba-dependencies.version>2023.0.0.0-RC1</spring-cloud-alibaba-dependencies.version>
+        <seata.version>2.0.0</seata.version>
+        <dubbo.version>3.2.11</dubbo.version>
+        <nacos.version>2.3.2</nacos.version>
 
         <!--aspectj-->
-        <org.aspectj.version>1.9.8.RC3</org.aspectj.version>
+        <!--https://github.com/eclipse-aspectj/aspectj/tags-->
+        <org.aspectj.version>1.9.22</org.aspectj.version>
 
         <!--jackson-->
         <jackson-datatype-jdk7.version>2.6.7</jackson-datatype-jdk7.version>
-        <jackson-datatype-jsr310.version>2.12.4</jackson-datatype-jsr310.version>
+        <jackson-datatype-jsr310.version>2.16.0-rc1</jackson-datatype-jsr310.version>
 
         <!--db、mybatis-->
-        <mybatis.version>3.5.7</mybatis.version>
+        <mybatis.version>3.5.16</mybatis.version>
         <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
-        <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
-        <mybatis-dynamic-sql.version>1.3.0</mybatis-dynamic-sql.version>
-        <dynamic-datasource-spring-boot-starter.version>3.4.1</dynamic-datasource-spring-boot-starter.version>
-        <druid-spring-boot-starter.version>1.2.8</druid-spring-boot-starter.version>
-        <mysql-connector-java.version>8.0.21</mysql-connector-java.version>
-        <moneta.version>1.4.2</moneta.version>
+        <mybatis-spring-boot-starter.version>3.0.3</mybatis-spring-boot-starter.version>
+        <!--https://mybatis.org/mybatis-dynamic-sql/docs/springBatch.html-->
+        <mybatis-dynamic-sql.version>1.5.0</mybatis-dynamic-sql.version>
+        <dynamic-datasource-spring-boot3-starter.version>4.3.0</dynamic-datasource-spring-boot3-starter.version>
+        <druid.version>1.2.21</druid.version>
+        <mysql-connector-j.version>8.3.0</mysql-connector-j.version>
+        <!--https://github.com/apache/shardingsphere-->
+        <!--https://shardingsphere.apache.org/document/current/en/overview/-->
+        <org.apache.shardingsphere.version>5.4.1</org.apache.shardingsphere.version>
+        <!-- https://github.com/JavaMoney -->
+        <!-- https://github.com/JavaMoney/jsr354-ri -->
+        <moneta.version>1.4.4</moneta.version>
+        <jaxb-impl.version>2.3.9</jaxb-impl.version>
+        <jaxb-core.version>2.3.0.1</jaxb-core.version>
+        <jaxb-runtime.version>2.3.9</jaxb-runtime.version>
 
         <!--log-->
-        <slf4j.version>1.7.30</slf4j.version>
-        <logback.version>1.2.3</logback.version>
+        <slf4j.version>2.0.12</slf4j.version>
+        <logback.version>1.5.3</logback.version>
 
         <!--security-->
-        <antisamy.version>1.6.4</antisamy.version>
-
-        <!--swagger-->
-        <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
-        <knife4j-aggregation-spring-boot-starter.version>2.0.9</knife4j-aggregation-spring-boot-starter.version>
+        <!--https://github.com/nahsra/antisamy-->
+        <antisamy.version>1.7.5</antisamy.version>
 
         <!--web、thymeleaf-->
-        <thymeleaf-extras.version>3.0.4.RELEASE</thymeleaf-extras.version>
-        <org.webjars.version>3.4.1</org.webjars.version>
-        <javax.el.version>3.0.0</javax.el.version>
+        <thymeleaf-extras-springsecurity6.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity6.version>
+        <thymeleaf-extras-java8time.version>3.0.4.RELEASE</thymeleaf-extras-java8time.version>
+        <org.webjars.bootstrap.version>5.3.2</org.webjars.bootstrap.version>
+        <org.webjars.jquery.version>3.7.1</org.webjars.jquery.version>
+
+        <jakarta.el.verson>5.0.0-M1</jakarta.el.verson>
+        <jakarta.el-api.version>6.0.0-RC1</jakarta.el-api.version>
+        <jakarta.validation-api.version>3.1.0-M1</jakarta.validation-api.version>
+        <jakarta.annotation-api.version>3.0.0-M1</jakarta.annotation-api.version>
+        <jetty-webapp.version>11.0.20</jetty-webapp.version>
 
         <!--sql、html parser-->
-        <jsqlparser.version>4.2</jsqlparser.version>
-        <jsoup.version>1.14.2</jsoup.version>
+        <jsqlparser.version>4.9</jsqlparser.version>
+        <jsoup.version>1.17.2</jsoup.version>
 
         <!--tools-->
-        <mapstruct.version>1.4.2.Final</mapstruct.version>
-        <hutool-all.version>5.7.12</hutool-all.version>
-        <commons-fileupload.version>1.4</commons-fileupload.version>
-        <commons-io.version>2.11.0</commons-io.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <hutool-all.version>5.8.26</hutool-all.version>
+        <commons-fileupload.version>1.5</commons-fileupload.version>
+        <commons-io.version>2.15.1</commons-io.version>
         <nio-multipart-parser.version>1.1.0</nio-multipart-parser.version>
-        <guava.version>31.0.1-jre</guava.version>
+        <guava.version>33.0.0-jre</guava.version>
 
-        <feign-okhttp.version>11.7</feign-okhttp.version>
+        <feign-okhttp.version>13.2.1</feign-okhttp.version>
 
-        <junit-jupiter.version>5.8.2</junit-jupiter.version>
-        <junit-platform-launcher.version>1.8.2</junit-platform-launcher.version>
-        <assertj-core.version>3.21.0</assertj-core.version>
-        <wiremock-jre8.version>2.32.0</wiremock-jre8.version>
+        <!-- https://mvnrepository.com/artifact/org.junit/junit-bom -->
+        <junit-bom.version>5.10.2</junit-bom.version>
+        <surefire-junit-platform.version>3.2.5</surefire-junit-platform.version>
+        <assertj-core.version>3.25.3</assertj-core.version>
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <mockito-core.version>5.11.0</mockito-core.version>
+        <mockito-inline.version>5.2.0</mockito-inline.version>
+        <jsr305.version>3.0.2</jsr305.version>
 
         <!--test-->
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-javadoc-plugin.version>3.3.1</maven-javadoc-plugin.version>
-        <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
-        <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
-        <mybatis-generator-maven-plugin.version>1.4.0</mybatis-generator-maven-plugin.version>
-        <flatten-maven-plugin.version>1.2.7</flatten-maven-plugin.version>
-        <aspectj-maven-plugin.version>1.4</aspectj-maven-plugin.version>
-        <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
+        <!--https://maven.apache.org/plugins/maven-compiler-plugin-->
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+        <!--https://maven.apache.org/plugins/maven-resources-plugin/examples/copy-resources.html-->
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <maven-javadoc-plugin.version>3.6.2</maven-javadoc-plugin.version>
+        <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
+        <maven-help-plugin.version>3.4.0</maven-help-plugin.version>
+        <!--http://mybatis.org/generator/-->
+        <mybatis-generator-maven-plugin.version>1.4.2</mybatis-generator-maven-plugin.version>
+        <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
+        <aspectj-maven-plugin.version>1.15.0</aspectj-maven-plugin.version>
+        <!--https://maven.apache.org/maven-release/maven-release-plugin/usage.html-->
+        <maven-release-plugin.version>3.0.1</maven-release-plugin.version>
+        <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
     </properties>
-
     <dependencyManagement>
         <dependencies>
             <!--spring all-->
@@ -135,7 +159,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -143,7 +166,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>org.springframework.session</groupId>
                 <artifactId>spring-session-bom</artifactId>
@@ -151,13 +173,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-authorization-server</artifactId>
+                <version>${spring-security-oauth2-authorization-server.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-instrument</artifactId>
                 <version>${spring.version}</version>
             </dependency>
-
             <!--alibaba-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -166,75 +191,84 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>io.seata</groupId>
                 <artifactId>seata-spring-boot-starter</artifactId>
                 <version>${seata.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-registry-nacos</artifactId>
                 <version>${dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>nacos-client</artifactId>
-                        <groupId>com.alibaba.nacos</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
-
+            -->
+            <!-- 注意：由于Nacos Java SDK在2.0版本后引入了gRPC，为了避免用户业务引入的gRPC版本不同导致冲突，使用了shaded技术将部分依赖直接封装进nacos-client中，导致nacos-client较大。-->
+            <!-- 如果用户未自行引入gRPC或确认版本无冲突，希望使用纯净版的nacos-client以减小依赖，可以使用classifier来指定使用纯净版。 -->
+            <!-- 使用纯净版时必须要引入同版本nacos-api和nacos-common，否则可能出现运行时找不到类的问题 -->
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>
                 <version>${nacos.version}</version>
+                <!-- 指定纯净版SDK -->
+                <!--
+                <classifier>pure</classifier>
+                -->
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-common</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-api</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
             <!--aspectj-->
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
                 <version>${org.aspectj.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>${org.aspectj.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjtools</artifactId>
                 <version>${org.aspectj.version}</version>
             </dependency>
-
             <!--jackson-->
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jdk7</artifactId>
                 <version>${jackson-datatype-jdk7.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr310</artifactId>
                 <version>${jackson-datatype-jsr310.version}</version>
             </dependency>
-
             <!--db、mybatis-->
             <!--https://mybatis.org/mybatis-3/index.html-->
             <dependency>
@@ -242,20 +276,17 @@
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-typehandlers-jsr310</artifactId>
                 <version>${mybatis-typehandlers-jsr310.version}</version>
             </dependency>
-
             <!--http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot-starter.version}</version>
             </dependency>
-
             <!-- MyBatis 动态SQL支持 -->
             <!--https://mybatis.org/mybatis-dynamic-sql/-->
             <dependency>
@@ -263,27 +294,56 @@
                 <artifactId>mybatis-dynamic-sql</artifactId>
                 <version>${mybatis-dynamic-sql.version}</version>
             </dependency>
-
             <!--https://github.com/baomidou/dynamic-datasource-spring-boot-starter-->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-                <version>${dynamic-datasource-spring-boot-starter.version}</version>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${dynamic-datasource-spring-boot3-starter.version}</version>
             </dependency>
-
             <!-- https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid-spring-boot-starter.version}</version>
+                <version>${druid.version}</version>
             </dependency>
-
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector-java.version}</version>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql-connector-j.version}</version>
+            </dependency>
+            <!--shardingsphere-->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>shardingsphere-jdbc-core</artifactId>
+                <version>${org.apache.shardingsphere.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>shardingsphere-transaction-base-seata-at</artifactId>
+                <version>${org.apache.shardingsphere.version}</version>
+            </dependency>
+            <!--jaxb-->
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>${jaxb-impl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-core</artifactId>
+                <version>${jaxb-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>${jaxb-runtime.version}</version>
+                <scope>runtime</scope>
+            </dependency>
             <!--javax.money-->
             <dependency>
                 <groupId>org.javamoney</groupId>
@@ -291,7 +351,6 @@
                 <version>${moneta.version}</version>
                 <type>pom</type>
             </dependency>
-
             <!--log-->
             <!-- slf4j -->
             <dependency>
@@ -299,26 +358,22 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
-
             <!-- logback -->
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
                 <version>${logback.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-access</artifactId>
                 <version>${logback.version}</version>
             </dependency>
-
             <!--security-->
             <!--https://github.com/nahsra/antisamy-->
             <dependency>
@@ -326,68 +381,56 @@
                 <artifactId>antisamy</artifactId>
                 <version>${antisamy.version}</version>
             </dependency>
-
-            <!--swagger-->
-            <!--https://doc.xiaominfo.com/knife4j/documentation/-->
-            <!--swagger官网：https://swagger.io/-->
-            <!--springfox github:https://github.com/springfox/springfox-->
-            <!--springfox 文档:http://springfox.github.io/springfox/docs/current/#quick-start-guides-->
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-spring-boot-starter</artifactId>
-                <version>${knife4j-spring-boot-starter.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
-                <version>${knife4j-spring-boot-starter.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-aggregation-spring-boot-starter</artifactId>
-                <version>${knife4j-aggregation-spring-boot-starter.version}</version>
-            </dependency>
-
             <!--web、thymeleaf-->
             <dependency>
                 <groupId>org.thymeleaf.extras</groupId>
-                <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-                <version>${thymeleaf-extras.version}</version>
+                <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+                <version>${thymeleaf-extras-springsecurity6.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.thymeleaf.extras</groupId>
                 <artifactId>thymeleaf-extras-java8time</artifactId>
-                <version>${thymeleaf-extras.version}</version>
+                <version>${thymeleaf-extras-java8time.version}</version>
             </dependency>
-
             <!-- webjars -->
             <dependency>
                 <groupId>org.webjars</groupId>
                 <artifactId>bootstrap</artifactId>
-                <version>${org.webjars.version}</version>
+                <version>${org.webjars.bootstrap.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.webjars</groupId>
                 <artifactId>jquery</artifactId>
-                <version>${org.webjars.version}</version>
+                <version>${org.webjars.jquery.version}</version>
             </dependency>
-
             <dependency>
-                <groupId>javax.el</groupId>
-                <artifactId>javax.el-api</artifactId>
-                <version>${javax.el.version}</version>
+                <groupId>jakarta.el</groupId>
+                <artifactId>jakarta.el-api</artifactId>
+                <version>${jakarta.el-api.version}</version>
             </dependency>
-
+            <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation-api.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${jakarta.annotation-api.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.glassfish</groupId>
-                <artifactId>javax.el</artifactId>
-                <version>${javax.el.version}</version>
+                <artifactId>jakarta.el</artifactId>
+                <version>${jakarta.el.verson}</version>
             </dependency>
-
+            <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-webapp -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-webapp</artifactId>
+                <version>${jetty-webapp.version}</version>
+            </dependency>
             <!--sql、html parser-->
             <!--https://github.com/JSQLParser/JSqlParser-->
             <dependency>
@@ -395,7 +438,6 @@
                 <artifactId>jsqlparser</artifactId>
                 <version>${jsqlparser.version}</version>
             </dependency>
-
             <!-- jsoup HTML parser library @ https://jsoup.org/ -->
             <!--html parser-->
             <dependency>
@@ -403,7 +445,6 @@
                 <artifactId>jsoup</artifactId>
                 <version>${jsoup.version}</version>
             </dependency>
-
             <!--tools-->
             <!--https://mapstruct.org/-->
             <!--https://mapstruct.org/documentation/stable/reference/html/-->
@@ -412,102 +453,76 @@
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-all.version}</version>
             </dependency>
-
             <!-- https://commons.apache.org/proper/commons-fileupload/index.html -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${commons-fileupload.version}</version>
             </dependency>
-
             <!--https://commons.apache.org/proper/commons-io/index.html-->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
             </dependency>
-
             <!--https://github.com/synchronoss/nio-multipart-->
             <dependency>
                 <groupId>org.synchronoss.cloud</groupId>
                 <artifactId>nio-multipart-parser</artifactId>
                 <version>${nio-multipart-parser.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
-
             <!--ok http-->
             <dependency>
                 <groupId>io.github.openfeign</groupId>
                 <artifactId>feign-okhttp</artifactId>
                 <version>${feign-okhttp.version}</version>
             </dependency>
-
             <!--test-->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-test</artifactId>
-                <version>${spring-boot-starter-parent.version}</version>
-                <scope>test</scope>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-params</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.junit.platform</groupId>
-                <artifactId>junit-platform-launcher</artifactId>
-                <version>${junit-platform-launcher.version}</version>
-                <scope>test</scope>
-            </dependency>
-
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
                 <version>${assertj-core.version}</version>
                 <scope>test</scope>
             </dependency>
-
             <dependency>
-                <groupId>com.github.tomakehurst</groupId>
-                <artifactId>wiremock-jre8</artifactId>
-                <version>${wiremock-jre8.version}</version>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito-core.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito-core.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito-inline.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${jsr305.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -515,210 +530,41 @@
     <!-- 所有的子项目默认依赖 -->
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito-core.version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
+            <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit-platform</artifactId>
+            <version>${surefire-junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>versions-maven-plugin</artifactId>
-                    <version>${versions-maven-plugin.version}</version>
-                    <configuration>
-                        <generateBackupPoms>false</generateBackupPoms>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                        <showDeprecation>true</showDeprecation>
-                        <showWarnings>true</showWarnings>
-                        <!--
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>org.mapstruct</groupId>
-                                <artifactId>mapstruct-processor</artifactId>
-                                <version>${mapstruct.version}</version>
-                            </path>
-                        </annotationProcessorPaths>
-                        -->
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                    <configuration>
-                        <charset>UTF-8</charset>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven-source-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>${maven-resources-plugin.version}</version>
-                    <configuration>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot-starter-parent.version}</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-help-plugin</artifactId>
-                    <version>${maven-help-plugin.version}</version>
-                </plugin>
-
-                <!--http://mybatis.org/generator/-->
-                <plugin>
-                    <groupId>org.mybatis.generator</groupId>
-                    <artifactId>mybatis-generator-maven-plugin</artifactId>
-                    <version>${mybatis-generator-maven-plugin.version}</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>flatten-maven-plugin</artifactId>
-                    <version>${flatten-maven-plugin.version}</version>
-                    <configuration>
-                        <updatePomFile>true</updatePomFile>
-                        <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                        <pomElements>
-                            <dependencies>expand</dependencies>
-                        </pomElements>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>flatten</id>
-                            <phase>process-resources</phase>
-                            <goals>
-                                <goal>flatten</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>flatten.clean</id>
-                            <phase>clean</phase>
-                            <goals>
-                                <goal>clean</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <!--aspectj织入插件-->
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>aspectj-maven-plugin</artifactId>
-                    <version>${aspectj-maven-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.aspectj</groupId>
-                            <artifactId>aspectjrt</artifactId>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.aspectj</groupId>
-                            <artifactId>aspectjtools</artifactId>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>compile</goal>
-                                <goal>test-compile</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <outxml>true</outxml>
-                        <showWeaveInfo>true</showWeaveInfo>
-                        <verbose>true</verbose>
-                        <aspectLibraries>
-                            <aspectLibrary>
-                                <groupId>org.springframework</groupId>
-                                <artifactId>spring-aspects</artifactId>
-                            </aspectLibrary>
-                        </aspectLibraries>
-                        <source>11</source>
-                        <target>11</target>
-                    </configuration>
-                </plugin>
-                <!--https://maven.apache.org/maven-release/maven-release-plugin/usage.html-->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>${maven-release-plugin.version}</version>
-                    <configuration>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <useReleaseProfile>false</useReleaseProfile>
-                        <releaseProfiles>release</releaseProfiles>
-                        <goals>deploy</goals>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
         <!--所有子项目依赖的插件-->
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -726,9 +572,16 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                    <release>${maven.compiler.release}</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
+                    <parameters>true</parameters>
+                    <!--JDK21以上必须设置,full取值适用于JDK21以上-->
+                    <proc>full</proc>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -746,9 +599,13 @@
                 <executions>
                     <execution>
                         <id>attach-sources</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>jar-no-fork</goal>
                         </goals>
+                        <configuration>
+                            <classifier>sources</classifier>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -780,14 +637,214 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>script</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin.version}</version>
+            </plugin>
         </plugins>
-
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions-maven-plugin.version}</version>
+                    <configuration>
+                        <generateBackupPoms>false</generateBackupPoms>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <release>${maven.compiler.release}</release>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <showDeprecation>true</showDeprecation>
+                        <showWarnings>true</showWarnings>
+                        <parameters>true</parameters>
+                        <proc>full</proc>
+                        <!--
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${mapstruct.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                        -->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <configuration>
+                        <charset>UTF-8</charset>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <configuration>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot-starter-parent.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-help-plugin</artifactId>
+                    <version>${maven-help-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.mybatis.generator</groupId>
+                    <artifactId>mybatis-generator-maven-plugin</artifactId>
+                    <version>${mybatis-generator-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>flatten-maven-plugin</artifactId>
+                    <version>${flatten-maven-plugin.version}</version>
+                    <configuration>
+                        <updatePomFile>true</updatePomFile>
+                        <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                        <pomElements>
+                            <dependencies>expand</dependencies>
+                        </pomElements>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>flatten</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>flatten</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>flatten.clean</id>
+                            <phase>clean</phase>
+                            <goals>
+                                <goal>clean</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>aspectj-maven-plugin</artifactId>
+                    <version>${aspectj-maven-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjrt</artifactId>
+                            <version>${org.aspectj.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjtools</artifactId>
+                            <version>${org.aspectj.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>test-compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <outxml>true</outxml>
+                        <showWeaveInfo>true</showWeaveInfo>
+                        <verbose>true</verbose>
+                        <aspectLibraries>
+                            <aspectLibrary>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-aspects</artifactId>
+                            </aspectLibrary>
+                        </aspectLibraries>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <complianceLevel>${maven.compiler.target}</complianceLevel>
+                        <parameters>true</parameters>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <releaseProfiles>release</releaseProfiles>
+                        <goals>deploy</goals>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <!--资源包含-->
         <resources>
             <resource>
+                <!-- 设定脚本目录  -->
+                <directory>script</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
+            <resource>
                 <!-- 设定主资源目录  -->
                 <directory>src/main/java</directory>
-                <filtering>true</filtering>
+                <filtering>false</filtering>
                 <includes>
                     <include>**/*.properties</include>
                     <include>**/*.yml</include>
@@ -797,13 +854,13 @@
             <resource>
                 <!-- 设定主资源目录  -->
                 <directory>src/main/resources</directory>
-                <filtering>true</filtering>
+                <filtering>false</filtering>
                 <includes>
-                    <include>**/*.*</include>
-                    <include>**/*</include>
+                    <include>**/**</include>
                 </includes>
             </resource>
         </resources>
+        <sourceDirectory>src/main/java</sourceDirectory>
     </build>
 
     <profiles>
@@ -821,44 +878,105 @@
                     <id>aliyun-public</id>
                     <name>aliyun-public</name>
                     <url>https://maven.aliyun.com/repository/public</url>
-                </repository>
-                <repository>
-                    <id>aliyun-google</id>
-                    <name>aliyun-google</name>
-                    <url>https://maven.aliyun.com/repository/google</url>
-                </repository>
-                <repository>
-                    <id>aliyun-spring</id>
-                    <name>aliyun-spring</name>
-                    <url>https://maven.aliyun.com/repository/spring</url>
-                </repository>
-                <repository>
-                    <id>aliyun-apache-snapshots</id>
-                    <name>aliyun-apache-snapshots</name>
-                    <url>https://maven.aliyun.com/repository/apache-snapshots</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
                 </repository>
                 <repository>
                     <id>apache-release</id>
                     <name>apache-release</name>
-                    <url>https://repo.apache.org/content/repositories/releases</url>
-                </repository>
-                <repository>
-                    <id>apache-snapshot</id>
-                    <name>apache-snapshot</name>
-                    <url>https://repo.apache.org/content/repositories/snapshots</url>
-                </repository>
-                <repository>
-                    <id>spring-snapshots</id>
-                    <name>Spring Snapshots</name>
-                    <url>https://repo.spring.io/snapshot</url>
-                    <snapshots>
+                    <url>https://repository.apache.org/content/repositories/releases</url>
+                    <releases>
                         <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>central1</id>
+                    <name>central1</name>
+                    <url>https://repo.maven.apache.org/maven2/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
                     </snapshots>
                 </repository>
                 <repository>
                     <id>spring-milestones</id>
                     <name>Spring Milestones</name>
                     <url>https://repo.spring.io/milestone</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>central2</id>
+                    <name>central2</name>
+                    <url>https://repo1.maven.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>huaweicloud</id>
+                    <name>huaweicloud</name>
+                    <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>apache-snapshot</id>
+                    <name>apache-snapshot</name>
+                    <url>https://repository.apache.org/content/repositories/snapshots</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>spring-snapshots</id>
+                    <name>Spring Snapshots</name>
+                    <url>https://repo.spring.io/snapshot</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </snapshots>
                 </repository>
             </repositories>
             <pluginRepositories>
@@ -866,20 +984,108 @@
                     <id>aliyun-public</id>
                     <name>aliyun-public</name>
                     <url>https://maven.aliyun.com/repository/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
                 </pluginRepository>
                 <pluginRepository>
-                    <id>spring-plugin</id>
-                    <name>spring-plugin</name>
-                    <url>https://maven.aliyun.com/repository/spring-plugin</url>
+                    <id>apache-release</id>
+                    <name>apache-release</name>
+                    <url>https://repository.apache.org/content/repositories/releases</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
                 </pluginRepository>
                 <pluginRepository>
-                    <id>gradle-plugin</id>
-                    <name>gradle-plugin</name>
-                    <url>https://maven.aliyun.com/repository/gradle-plugin</url>
+                    <id>central1</id>
+                    <name>central1</name>
+                    <url>https://repo.maven.apache.org/maven2/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>spring-milestones</id>
+                    <name>Spring Milestones</name>
+                    <url>https://repo.spring.io/milestone</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>central2</id>
+                    <name>central2</name>
+                    <url>https://repo1.maven.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>huaweicloud</id>
+                    <name>huaweicloud</name>
+                    <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>apache-snapshot</id>
+                    <name>apache-snapshot</name>
+                    <url>https://repository.apache.org/content/repositories/snapshots</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>spring-snapshots</id>
+                    <name>Spring Snapshots</name>
+                    <url>https://repo.spring.io/snapshot</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </snapshots>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
-
         <profile>
             <id>release-ossrh</id>
             <properties>
@@ -912,7 +1118,7 @@
                             <dependency>
                                 <groupId>com.thoughtworks.xstream</groupId>
                                 <artifactId>xstream</artifactId>
-                                <version>1.4.15</version>
+                                <version>${xstream}</version>
                             </dependency>
                         </dependencies>
                     </plugin>
@@ -929,6 +1135,19 @@
                                 <id>attach-javadocs</id>
                                 <goals>
                                     <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven-source-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
                                 </goals>
                             </execution>
                         </executions>
