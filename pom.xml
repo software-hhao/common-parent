@@ -4,7 +4,7 @@
     <inceptionYear>2021</inceptionYear>
     <groupId>io.github.software-hhao</groupId>
     <artifactId>hhao-common-parent</artifactId>
-    <version>3.0.1-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>hhao parent pom</name>
@@ -31,10 +31,6 @@
     </developers>
     <properties>
         <!--ossrh-->
-        <!--
-        <gpg.executable>gpg</gpg.executable>
-        <gpg.passphrase>07370C7E</gpg.passphrase>
-        -->
         <gpg.keyname>07370C7E</gpg.keyname>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
@@ -1164,12 +1160,12 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
-                                <!--
                                 <configuration>
                                     <keyname>${gpg.keyname}</keyname>
+                                    <!--
                                     <passphrase>${gpg.keyname}</passphrase>
+                                    -->
                                 </configuration>
-                                -->
                             </execution>
                         </executions>
                     </plugin>
