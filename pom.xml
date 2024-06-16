@@ -21,7 +21,7 @@
         <url>https://github.com/software-hhao/hhao-common-parent</url>
         <connection>scm:git:ssh://git@github.com/software-hhao/hhao-common-parent.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/software-hhao/hhao-common-parent.git</developerConnection>
-        <tag>hhao-common-parent-3.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
     <developers>
         <developer>
@@ -40,28 +40,27 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.release>21</maven.compiler.release>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!--spring all-->
-        <spring-boot-starter-parent.version>3.2.5</spring-boot-starter-parent.version>
-        <spring-cloud-dependencies.version>2023.0.1</spring-cloud-dependencies.version>
-        <spring-session-bom.version>3.2.2</spring-session-bom.version>
-        <spring-security-oauth2-authorization-server.version>1.2.4</spring-security-oauth2-authorization-server.version>
-        <spring.version>6.1.6</spring.version>
+        <spring-boot-starter-parent.version>3.3.0</spring-boot-starter-parent.version>
+        <spring-cloud-dependencies.version>2023.0.2</spring-cloud-dependencies.version>
+        <spring-session-bom.version>3.2.3</spring-session-bom.version>
+        <spring-security-oauth2-authorization-server.version>1.3.0</spring-security-oauth2-authorization-server.version>
+        <spring.version>6.1.8</spring.version>
 
         <!--alibaba-->
         <!--https://sca.aliyun.com/en-us/-->
         <!--https://start.dubbo.apache.org/-->
-        <spring-cloud-alibaba-dependencies.version>2023.0.0.0-RC1</spring-cloud-alibaba-dependencies.version>
+        <spring-cloud-alibaba-dependencies.version>2023.0.1.0</spring-cloud-alibaba-dependencies.version>
         <seata.version>2.0.0</seata.version>
         <dubbo.version>3.2.11</dubbo.version>
         <nacos.version>2.3.2</nacos.version>
 
         <!--aspectj-->
         <!--https://github.com/eclipse-aspectj/aspectj/tags-->
-        <org.aspectj.version>1.9.22</org.aspectj.version>
+        <org.aspectj.version>1.9.22.1</org.aspectj.version>
 
         <!--jackson-->
         <jackson-datatype-jdk7.version>2.6.7</jackson-datatype-jdk7.version>
@@ -72,23 +71,24 @@
         <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
         <mybatis-spring-boot-starter.version>3.0.3</mybatis-spring-boot-starter.version>
         <!--https://mybatis.org/mybatis-dynamic-sql/docs/springBatch.html-->
-        <mybatis-dynamic-sql.version>1.5.0</mybatis-dynamic-sql.version>
+        <mybatis-dynamic-sql.version>1.5.2</mybatis-dynamic-sql.version>
         <dynamic-datasource-spring-boot3-starter.version>4.3.0</dynamic-datasource-spring-boot3-starter.version>
-        <druid.version>1.2.21</druid.version>
-        <mysql-connector-j.version>8.3.0</mysql-connector-j.version>
+        <druid.version>1.2.23</druid.version>
+        <mysql-connector-j.version>8.4.0</mysql-connector-j.version>
+        <h2.version>2.2.224</h2.version>
         <!--https://github.com/apache/shardingsphere-->
         <!--https://shardingsphere.apache.org/document/current/en/overview/-->
-        <org.apache.shardingsphere.version>5.4.1</org.apache.shardingsphere.version>
+        <org.apache.shardingsphere.version>5.5.0</org.apache.shardingsphere.version>
         <!-- https://github.com/JavaMoney -->
         <!-- https://github.com/JavaMoney/jsr354-ri -->
         <moneta.version>1.4.4</moneta.version>
-        <jaxb-impl.version>2.3.9</jaxb-impl.version>
-        <jaxb-core.version>2.3.0.1</jaxb-core.version>
-        <jaxb-runtime.version>2.3.9</jaxb-runtime.version>
+        <jaxb-impl.version>4.0.5</jaxb-impl.version>
+        <jaxb-core.version>4.0.5</jaxb-core.version>
+        <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
 
         <!--log-->
-        <slf4j.version>2.0.12</slf4j.version>
-        <logback.version>1.5.3</logback.version>
+        <slf4j.version>2.0.13</slf4j.version>
+        <logback.version>1.5.6</logback.version>
 
         <!--security-->
         <!--https://github.com/nahsra/antisamy-->
@@ -101,10 +101,10 @@
         <org.webjars.jquery.version>3.7.1</org.webjars.jquery.version>
 
         <jakarta.el.verson>5.0.0-M1</jakarta.el.verson>
-        <jakarta.el-api.version>6.0.0-RC1</jakarta.el-api.version>
-        <jakarta.validation-api.version>3.1.0-M1</jakarta.validation-api.version>
-        <jakarta.annotation-api.version>3.0.0-M1</jakarta.annotation-api.version>
-        <jetty-webapp.version>11.0.20</jetty-webapp.version>
+        <jakarta.el-api.version>6.0.0</jakarta.el-api.version>
+        <jakarta.validation-api.version>3.1.0</jakarta.validation-api.version>
+        <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
+        <jetty-webapp.version>11.0.21</jetty-webapp.version>
 
         <!--sql、html parser-->
         <jsqlparser.version>4.9</jsqlparser.version>
@@ -116,16 +116,16 @@
         <commons-fileupload.version>1.5</commons-fileupload.version>
         <commons-io.version>2.15.1</commons-io.version>
         <nio-multipart-parser.version>1.1.0</nio-multipart-parser.version>
-        <guava.version>33.0.0-jre</guava.version>
+        <guava.version>33.2.1-jre</guava.version>
 
         <feign-okhttp.version>13.2.1</feign-okhttp.version>
 
         <!-- https://mvnrepository.com/artifact/org.junit/junit-bom -->
         <junit-bom.version>5.10.2</junit-bom.version>
         <surefire-junit-platform.version>3.2.5</surefire-junit-platform.version>
-        <assertj-core.version>3.25.3</assertj-core.version>
+        <assertj-core.version>3.26.0</assertj-core.version>
         <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
-        <mockito-core.version>5.11.0</mockito-core.version>
+        <mockito-core.version>5.12.0</mockito-core.version>
         <mockito-inline.version>5.2.0</mockito-inline.version>
         <jsr305.version>3.0.2</jsr305.version>
 
@@ -145,6 +145,10 @@
         <!--https://maven.apache.org/maven-release/maven-release-plugin/usage.html-->
         <maven-release-plugin.version>3.0.1</maven-release-plugin.version>
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
+        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+        <maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
+        <!-- https://maven.apache.org/wrapper/maven-wrapper-plugin/ -->
+        <maven-wrapper-plugin.version>3.3.2</maven-wrapper-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -274,6 +278,11 @@
                 <version>${mybatis.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis-generator-maven-plugin.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-typehandlers-jsr310</artifactId>
                 <version>${mybatis-typehandlers-jsr310.version}</version>
@@ -313,10 +322,20 @@
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-connector-j.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
             <!--shardingsphere-->
             <dependency>
                 <groupId>org.apache.shardingsphere</groupId>
-                <artifactId>shardingsphere-jdbc-core</artifactId>
+                <artifactId>shardingsphere-jdbc</artifactId>
+                <version>${org.apache.shardingsphere.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>shardingsphere-infra-algorithm-load-balancer-core</artifactId>
                 <version>${org.apache.shardingsphere.version}</version>
             </dependency>
             <dependency>
@@ -555,12 +574,30 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>${maven-surefire-plugin.version}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>${maven-antrun-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="${project.groupId}:${project.artifactId}:${project.version}" file="${project.basedir}/script/VERSION" append="false"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -733,6 +770,11 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-wrapper-plugin</artifactId>
+                    <version>${maven-wrapper-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot-starter-parent.version}</version>
@@ -885,6 +927,18 @@
                     </snapshots>
                 </repository>
                 <repository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <checksumPolicy>ignore</checksumPolicy>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
                     <id>apache-release</id>
                     <name>apache-release</name>
                     <url>https://repository.apache.org/content/repositories/releases</url>
@@ -1017,9 +1071,9 @@
                     </snapshots>
                 </pluginRepository>
                 <pluginRepository>
-                    <id>spring-milestones</id>
-                    <name>Spring Milestones</name>
-                    <url>https://repo.spring.io/milestone</url>
+                    <id>central2</id>
+                    <name>central2</name>
+                    <url>https://repo1.maven.org/maven2</url>
                     <releases>
                         <enabled>true</enabled>
                         <checksumPolicy>ignore</checksumPolicy>
@@ -1030,9 +1084,9 @@
                     </snapshots>
                 </pluginRepository>
                 <pluginRepository>
-                    <id>central2</id>
-                    <name>central2</name>
-                    <url>https://repo1.maven.org/maven2</url>
+                    <id>spring-milestones</id>
+                    <name>Spring Milestones</name>
+                    <url>https://repo.spring.io/milestone</url>
                     <releases>
                         <enabled>true</enabled>
                         <checksumPolicy>ignore</checksumPolicy>
